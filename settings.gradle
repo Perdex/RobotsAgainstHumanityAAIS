@@ -1,0 +1,6 @@
+//After you have made a new skill via the web interface, it will be included in furhatSkills.gradle
+
+try {
+    apply from: 'furhatSkills.gradle'
+} catch (Exception ignored) {
+}

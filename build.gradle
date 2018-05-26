@@ -1,0 +1,19 @@
+buildscript {
+    repositories {
+        maven {
+            credentials {
+                username = System.getProperty("bintray.user") ?: (project.hasProperty('bintrayUser') ? bintrayUser : null)
+                password = System.getProperty("bintray.key") ?: (project.hasProperty('bintrayKey') ? bintrayKey : null)
+            }
+            url "http://furhatrobotics.bintray.com/furhatPrivate"
+        }
+        maven { url "http://furhatrobotics.bintray.com/furhat"}
+        jcenter()
+    }
+
+    dependencies {
+        classpath "com.furhatrobotics.furhatos:sdk-launcher:$furhat_version"
+    }
+}
+
+apply plugin: 'com.furhatrobotics.sdk-launcher'
