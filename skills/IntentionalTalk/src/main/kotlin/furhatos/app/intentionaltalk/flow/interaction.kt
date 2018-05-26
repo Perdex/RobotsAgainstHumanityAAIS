@@ -8,6 +8,17 @@ import furhatos.records.Location
 import furhatos.util.*
 import furhatos.flow.*
 import furhatos.gestures.*
+import java.io.*;
+import java.net.*;
+
+fun sendTcp(a: String, b: String){
+	try {
+		val clientSocket = Socket("10.3.2.80", 1123)
+		val out = PrintWriter(clientSocket.getOutputStream(), true)
+		out.println(a)
+		out.println(b)
+	}catch(e: IOException){}
+}
 
 val Clue = SimpleIntent("Give me a clue", "Tell me a clue", "Could I have a clue")
 
