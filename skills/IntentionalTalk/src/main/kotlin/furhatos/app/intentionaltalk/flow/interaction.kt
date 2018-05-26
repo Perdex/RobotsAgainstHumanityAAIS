@@ -11,7 +11,7 @@ import furhatos.gestures.*
 import java.io.*;
 import java.net.*;
 
-fun sendTcp(a: String, b: String){
+fun tcpsend(a: String, b: String){
 	try {
 		val clientSocket = Socket("10.3.2.80", 1123)
 		val out = PrintWriter(clientSocket.getOutputStream(), true)
@@ -39,9 +39,6 @@ val gaze = defineGesture("MySmile") {
     reset(10.0)
 }
 
-fun tcpsend(command : String, text : String) {
-    println("Hello world!")
-}
 
 val Start : State = state(Interaction) {
 
